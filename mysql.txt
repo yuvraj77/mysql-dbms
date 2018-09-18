@@ -1,0 +1,55 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| Ara                |
+| YuvarajCare        |
+| arsh               |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use YuvarajCare;
+Database changed
+mysql> select * from physicians;
++------+---------+----------+
+| id   | name    | password |
++------+---------+----------+
+|   13 | yuvaraj | ara@123  |
++------+---------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from patients;
++------------+------------+------------+-----------+------+------------+-----------+--------+-----------+
+| idpatients | personalno | secondname | firstname | sex  | dob        | pob       | place  | physician |
++------------+------------+------------+-----------+------+------------+-----------+--------+-----------+
+|        123 |    8747922 | raj        | yuv       | male | 07-10-1997 | madhugiri | tumkur | yuvaraj   |
++------------+------------+------------+-----------+------+------------+-----------+--------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select * from consultations;
++------+------------+------------+--------+--------+------------+--------------+-----------+---------------+---------+-----------+
+| id   | personalno | date       | weight | height | diagnostic | selectedbone | realscore | maturityscore | boneage | physician |
++------+------------+------------+--------+--------+------------+--------------+-----------+---------------+---------+-----------+
+|  123 |    8747922 | 15-09-2017 |     65 |      6 | brokage    | femur        | 50        | 35            |      10 | yuvaraj   |
++------+------------+------------+--------+--------+------------+--------------+-----------+---------------+---------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select * from bones;
++------+-------+---------+----------+
+| id   | bone  | stage   | text     |
++------+-------+---------+----------+
+|  123 | femur | brokage | no worry |
++------+-------+---------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from bonestages;
++---------+-------+---------+
+| id      | name  | stages  |
++---------+-------+---------+
+| brokage | femur | brokage |
++---------+-------+---------+
+1 row in set (0.00 sec)
